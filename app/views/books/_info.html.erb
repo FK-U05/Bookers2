@@ -1,12 +1,11 @@
 <h1>User info</h1>
-
-<%= image_tag %>
-<p>name<%=</p>
-<p>introduction</p>
+<p><%= image_tag book.user.get_profile_image(100,100)%></p>
+<p>name<%= user.name %></p>
+<p>introduction<%= user.introduction %></p>
 
 <h1>New book</h1>
 
-<%= form with model:@book,url'/books',method: :post  do |f| %>
+<%= form with model:book,url'/books',method: :post  do |f| %>
 <p>Title<%= f.text_field :title %></P>
 <p>Opinion<%= f.text_field :body %></p>
 <p><%= f.submit 'Create Book'%></p>
