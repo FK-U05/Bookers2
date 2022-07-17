@@ -1,0 +1,13 @@
+<h1>User info</h1>
+
+<%= image_tag %>
+<p>name<%=</p>
+<p>introduction</p>
+
+<h1>New book</h1>
+
+<%= form with model:@book,url'/books',method: :post  do |f| %>
+<p>Title<%= f.text_field :title %></P>
+<p>Opinion<%= f.text_field :body %></p>
+<p><%= f.submit 'Create Book'%></p>
+<%end%>
