@@ -4,9 +4,9 @@ class UsersController < ApplicationController
     @books=Book.all
     @book=Book.new
   end
-  
+
   def create
-   
+
   end
 
   def show
@@ -29,7 +29,7 @@ private
   def user_params
    params.require(:user).permit(:name,:profile_image,:introduction)
   end
-  
+
 end
 
 
