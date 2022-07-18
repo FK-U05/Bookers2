@@ -1,10 +1,17 @@
-<%= render partial:'info',locals:{book:@book,user:@user} %>
+<%= render 'info',user:@user %>
 
 <h1>Book detail</h1>
 
-<%= link_to'@book.name_id,'user_path'%>
+<%= link_to'@book.name_id',user_path%>
 <%= link_to'@book.title'%>
 <%= @book.body %>
 
-<%= link_to'Edit','edit_book_path'%>
-<%= link_to'Destroy','book_path',method: :delete %>
+<% if @user == current_user %>
+<%= link_to'Edit',edit_book_path%>
+<%= link_to'Destroy',book_path,method: :delete %>
+
+<% end %>
+
+<%= render'new',book:@book %>
+
+

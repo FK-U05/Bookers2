@@ -1,15 +1,13 @@
 class BooksController < ApplicationController
 
   def index
-    @book=Book.new
     @books=Book.all
   end
 
   def create
-    @book=Book.new(books_params)
-    @book.user_id=current_user.id
+    @book=Book.new(book_params)
     @book.save
-    redirect_to book_path(books_params)
+    redirect_to book_path(current_user.id),flash{notice:"You have created book successfully."}
   end
 
   def show
@@ -23,7 +21,7 @@ class BooksController < ApplicationController
   def update
     book=Book.find(params[:id])
     book.update(book_params)
-    redirect_to book_path(book.id)
+    redirect_to book_path,flash{notice_up:"You have updated book successfully."}
   end
 
   def destroy
