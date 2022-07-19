@@ -3,10 +3,14 @@
 <%= @user.name %>
 <%= @user.introduction %>
 
+<%= render 'books/new',book: @book %>
+
 <h1>Users</h1>
 <p>image</p>
 <p>name</p>
-<%= @users.profile_image(100,100) %>
-<%= @users.name %>
+<% @users.each do |user| %>
+<%= image_tag user.get_profile_image(100,100) %>
+<%= user.name %>
+<%= link_to 'Show',user_path(user)%>
+<%end%>
 
-<%= link_to'Show',user_path %>
