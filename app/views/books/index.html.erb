@@ -1,14 +1,22 @@
+<% if @book.errors.any? %>
+  <%= @book.errors.count %> errors prohibited this obj from being saved:
+  <ul>
+    <% @book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <h1>User info</h1>
-<%= image_tag @user.get_profile_image(100,100) %>
+<p><%= image_tag @user.get_profile_image(100,100) %></p>
 <p>name<%= @user.name %></p>
 <p>introduction<%= @user.introduction %></p>
 
 <% link_to edit_user_path(@user) do %>
-<i class="fa-solid fa-user-gear"></i>
+<i class="fas fa-user-cog"></i>
 <% end %>
 
 <%= render 'books/new',book: @book %>
-
 
 <h1>Books</h1>
 
@@ -17,13 +25,13 @@
 
 <% @books.each do |book| %>
 <%= image_tag book.user.get_profile_image(100,100)%>
-<%= link_to book_path(book.id) do %>
+<%= link_to book_path(book) do %>
 <%= book.title %>
 <% end %>
 <%= book.body%>
 
 <% end %>
 
-<% render 'new',book:@book %>
+<% render 'new',book: @book %>
 
 

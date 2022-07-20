@@ -1,9 +1,8 @@
-<%＝ flash[:notice] %>
 <h1>User info</h1>
-<%= image_tag @user.get_profile_image(100,100)%>
+<%= image_tag @user.get_profile_image(100,100) %>
 <%= @user.name%>
 <%= @user.introduction %>
-<%= link_to '設定',edit_user_path %>
+<%= link_to '設定',edit_user_path(@user) %>
 
 <h1>Book detail</h1>
 
@@ -22,6 +21,14 @@
 
 <% end %>
 
-<%= render'new',book: @book %>
+<h1>New book</h1>
+<%= form_with model: @booknew, url: books_path do |f| %>
+<p>Title</p>
+<p><%= f.text_field :title %></p>
+<p>Opinion</p>
+<p><%= f.text_area :body %></p>
+<p><%= f.submit 'Create Book' %></p>
+
+<%end%>
 
 

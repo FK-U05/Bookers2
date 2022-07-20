@@ -1,10 +1,10 @@
 <h1>User info</h1>
 <%= image_tag @user.get_profile_image(100,100)%>
-<%= @user.name%>
+<p>name
+<%= @user.name%></p>
+<p>introduction</p>
 <%= @user.introduction %>
-<%= link_to edit_user_path(@user) do %>
-<i class="fa-solid fa-user-gear"></i>
-<% end %>
+<%= link_to "設定" ,edit_user_path(@user) %>
 
 
 <%= render 'books/new',book: @book %>
@@ -19,4 +19,8 @@
 <%= book.body %>
 
 
+<% end %>
+
+<%= link_to edit_user_path(@user) do %>
+<i class="fa-solid fa-user-gear"></i>
 <% end %>
