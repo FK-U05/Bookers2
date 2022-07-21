@@ -17,13 +17,12 @@
 *{
   margin:0;
   padding:0;
-  box-sizing:border-box;}
-  
-  .topmain{
-    height:100%;
-    width:100%;
+  box-sizing:border-box;
   }
   
+  .form-group{
+    border-bottom-color:red;
+  }
  　
   .end{
     text-align:center;

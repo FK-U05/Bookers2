@@ -7,7 +7,6 @@
     <%= csp_meta_tag %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-      <link href="https://fonts.googleapis.com/css? family=Kaushan+Script" rel="stylesheet">
   </head>
 
   <body>
@@ -46,9 +45,11 @@
              <%= "Log out" %></li>
              <% end %>
             </ul>
+            
             </div>
 
            <%else%>
+                       
 
             <ul class="navbar-nav">
 
@@ -74,6 +75,8 @@
               <% end %>
               </div>
              </ul>
+             
+
             <% end %>
       </div>
       </nav>
@@ -85,6 +88,7 @@
       <%= flash[:bookup] %>
       <%= flash[:bookupd] %>
       <%= flash[:userupd] %>
+    
         <%= yield %>
     </main>
 
