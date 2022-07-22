@@ -10,29 +10,12 @@
 
         　<div class="btn-wrapper col-10 mx-auto">
 
-       <% if user_signed_in? %>
-      
-          <div class="d-grid gap-2">
-             <%= link_to user_path(current_user) do %>
-            <button class="btn btn-info btn-sm btn-block mb-3">Log in</button>
-             <% end %>
-             <%= link_to user_path(current_user) do %>
-            <button class="btn btn-success btn-sm btn-block mb-3">Sign up</button>
-             <% end %>
-         </div>
-
-             <% else %>
-          <div class="d-grid gap-2">
-              <%= link_to new_user_session_path do %>
-              <button class="btn btn-info btn-sm btn-block mb-3">Log in</button>
-              <% end %>
-              <%= link_to new_user_registration_path do %>
-              <button class="btn btn-success btn-sm btn-block mb-3">Sign up</button>
-              <% end %>
-         </div>
-
-
-        <% end %>
+        　<div class="row">
+           <a class="btn btn-info btn-sm btn-block mb-3 sign_in" href="/users/sign_in">Log in</a>
+          </div>
+          <div class="row">
+           <a class="btn btn-success btn-sm btn-block sign_up" href="/users/sign_up">Sign up</a>
+          </div>
 
           </div>
 
